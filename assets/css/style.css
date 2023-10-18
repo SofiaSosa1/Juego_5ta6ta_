@@ -1,25 +1,47 @@
+
+#fondo{
+    background-image: url("../img/Fondo.png"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+}
 .contenedor{
-   background-image: url("../img/Fondo.png");
-   background-repeat: no-repeat;
-   background-position: center center;
-  background-size: contain;
-  background-attachment: scroll;
-   height:520px;
-   width: 1175px;
-   min-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:local;
 }
 .contenedor h1{
-    top: 20%;
-    left: 30%;
+    top: 10%;
+    left: 25%;
+    background-attachment:local;
+    background-size: cover;
     position: absolute;
     text-align: center;
     font-family: 'Common Pixel', sans-serif;
-    background-attachment: fixed;
-    font-size: 800%;
+
+    font-size: 700%;
 }
 .contenedor button{
+    
     top: 50%;
     left: 45%;
     position: absolute;
+    font-family: 'Common Pixel', sans-serif;
   
+}
+#bobby{
+    margin-top: 33%;
+    margin-left: 20%;
+    height: 80px;
+}
+#fondojuego{
+    background-image: url("../img/FondoBase.png"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contenido button{
+    top: 10%;
+    left: 80%;
+    position: absolute;
+    font-family: 'Common Pixel', sans-serif;
 }
