@@ -1,4 +1,7 @@
 
+*{
+    box-sizing: border-box;
+}
 #fondo{
     background-image: url("../img/Fondo.png"); 
     background-repeat: no-repeat;
@@ -9,6 +12,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:local;
+   background-size: 100% 100%;
 }
 .contenedor h1{
     top: 10%;
@@ -18,11 +22,11 @@
     position: absolute;
     text-align: center;
     font-family: 'Common Pixel', sans-serif;
-
     font-size: 700%;
+    background-size: 100% 100%;
 }
 .contenedor button{
-    
+    font-size: 4vw;
     top: 50%;
     left: 45%;
     position: absolute;
@@ -30,18 +34,25 @@
   
 }
 #bobby{
+    
     margin-top: 33%;
     margin-left: 20%;
     height: 80px;
+   
 }
-#fondojuego{
-    background-image: url("../img/FondoBase.png"); 
+#FondoJuego{
+    background-image: url("../img/FondoJuego.png"); 
     background-repeat: no-repeat;
     background-size: cover;
 }
 .contenido button{
     top: 10%;
     left: 80%;
+   
     position: absolute;
     font-family: 'Common Pixel', sans-serif;
+}
+#sonido{
+    width: 20px;
+    height: 20px;
 }
