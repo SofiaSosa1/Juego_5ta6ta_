@@ -91,11 +91,6 @@ function setScreen() {
 }
 
 setScreen();
-window.addEventListener("resize", () => setTimeout(setScreen, 500));
-
-if (screen.orientation) {
-    screen.orientation.addEventListener("change", setScreen);
-}
 
 //escala 
 function getScaleRatio() {
@@ -136,7 +131,7 @@ function setupGameReset() {
     }
 }
 
-//r einicia el juego
+//reinicia el juego
 function reset() {
     hasAddedEventListenersForRestart = false;
     gameOver = false;
@@ -196,8 +191,6 @@ function gameLoop(currentTime) {
         setupGameReset();
         score.setHighScore();
     }
-
-
     plataforma.draw();
     enemiController.draw();
     bobby.draw();

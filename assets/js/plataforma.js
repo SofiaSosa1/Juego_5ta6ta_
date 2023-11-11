@@ -13,7 +13,7 @@ export default class Plataforma {
         this.plataformaImage.src = "./assets/img/Plataforma.png";
        
     }
-
+//darle la velocidad y desplazamiento de la plataforma
     update(gameSpeed, frameTimeDelta) {
         this.x -= gameSpeed * frameTimeDelta * this.speed * this.scaleRatio;
     }
@@ -39,7 +39,7 @@ export default class Plataforma {
             this.x = 0;
         }
     }
-
+//reinia juego, vuelve posicion de antes
     reset() {
         this.x = 0;
     }

@@ -48,21 +48,21 @@ export default class Bobby {
 
      
     }
-
+//si presiona espacio=true
     touchstart = () => {
         this.jumpPressed = true;
     };
-
+//si no presiona espacio=false
     touchend = () => {
         this.jumpPressed = false;
     };
-
+//por cada toque
     keydown = (event) => {
         if (event.code === "Space") {
             this.jumpPressed = true;
         }
     };
-
+//por cada toque
     keyup = (event) => {
         if (event.code === "Space") {
             this.jumpPressed = false;

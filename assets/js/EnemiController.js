@@ -18,7 +18,7 @@ export default class EnemiController {
     this.setNextEnemiTime();
   }
 
-  
+  //agarra numero random, y aparece un nuevo enemigo
   setNextEnemiTime() {
     const num = this.getRandomNumber(
       this.ENEMI_INTERVAL_MIN,
@@ -31,7 +31,7 @@ export default class EnemiController {
   getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-
+//crea nuevo enemigo y lo agrega al array de enemigos
   createEnemi() {
     const index = this.getRandomNumber(0, this.enemiImages.length - 1);
     const enemiImage = this.enemiImages[index];
