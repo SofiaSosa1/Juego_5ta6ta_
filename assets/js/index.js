@@ -20,8 +20,8 @@ const MIN_JUMP_HEIGHT = 150;
 const PLATAFORMA_WIDTH = 2400;
 const PLATAFORMA_HEIGHT = 24;
 const PLATAFORMA_AND_ENEMI_SPEED =0.8;
-const META_ENTRY_SPEED = 2;
-const ENEMI_CONFIG = [
+
+const ENEMIGOS = [
     { width: 48 / 1.5, height: 100 / 1.2, image: "./assets/img/serpiente.png" },
     { width: 98 / 1.5, height: 100 / 1.2, image: "./assets/img/abeja.png" },
 ];
@@ -65,7 +65,7 @@ function createSprites() {
         scaleRatio
     );
 
-    const enemiImages = ENEMI_CONFIG.map((Enemigos) => {
+    const enemiImages = ENEMIGOS.map((Enemigos) => {
         const image = new Image();
         image.src = Enemigos.image;
         return {

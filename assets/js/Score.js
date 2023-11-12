@@ -30,7 +30,7 @@ export default class Score {
       localStorage.setItem(this.HIGH_SCORE_KEY, Math.floor(this.score));
     }
   }
-
+//puntajes
   draw() {
     const y = 20 * this.scaleRatio;
 

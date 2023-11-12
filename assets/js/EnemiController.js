@@ -1,4 +1,4 @@
-import Enemi from "./Enemi.js";
+import Enemi from "./enemi.js";
 
 export default class EnemiController {
   //tiempo min y max que aparecen los enemigos
