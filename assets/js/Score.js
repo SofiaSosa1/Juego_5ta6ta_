@@ -1,42 +1,60 @@
 export default class Score {
   score = 0;
-  HIGH_SCORE_KEY = "highScore";
+  HIGH_SCORE_KEY = "highscore";
+  gameWon = false; //  si el juego ha sido ganado
 
   constructor(ctx, scaleRatio) {
     this.ctx = ctx;
     this.canvas = ctx.canvas;
     this.scaleRatio = scaleRatio;
   }
-//aumenta velocidad de record
+
   update(frameTimeDelta) {
-    this.score += frameTimeDelta * 0.01;
+    if (!this.gameWon) {
+      this.score += frameTimeDelta * 0.01;
+      // verifica si el puntaje alcanza los 100 puntos
+      if (this.score >= 100) {
+        this.gameWon = true;
+      }
+    }
   }
-//reinicia,vuelve a 0
+
   reset() {
     this.score = 0;
+    this.gameWon = false; 
   }
-//compara puntuacion actual con la mas alta, almacenada en el local
+
   setHighScore() {
     const highScore = Number(localStorage.getItem(this.HIGH_SCORE_KEY));
     if (this.score > highScore) {
       localStorage.setItem(this.HIGH_SCORE_KEY, Math.floor(this.score));
     }
   }
-//puntuaciones en el canva
+
   draw() {
-    const highScore = Number(localStorage.getItem(this.HIGH_SCORE_KEY));
     const y = 20 * this.scaleRatio;
 
     const fontSize = 20 * this.scaleRatio;
     this.ctx.font = `${fontSize}px Common Pixel`;
     this.ctx.fillStyle = "#525250";
     const scoreX = this.canvas.width - 75 * this.scaleRatio;
-    const highScoreX = scoreX - 125 * this.scaleRatio;
 
-    const scorePadded = Math.floor(this.score).toString().padStart(6, 0);
-    const highScorePadded = highScore.toString().padStart(6, 0);
-
-    this.ctx.fillText(scorePadded, scoreX, y);
-    this.ctx.fillText(` ${highScorePadded}`, highScoreX, y);
+    // mostrar el mensaje de ganaste si el juego ha sido ganado
+    if (this.gameWon) {
+      const text = "YOU WIN";
+      
+      const textX = this.canvas.width / 2 - this.ctx.measureText(text).width / 2;
+      this.ctx.fillText(text, textX, y);
+     showGameOver()
+    } else {
+      const text = "META 100";
+      
+      const textZ = this.canvas.width / 2 - this.ctx.measureText(text).width / 3;
+      this.ctx.fillText(text, textZ, y);
+      const scorePadded = Math.floor(this.score).toString().padStart(6, 0);
+     
+      this.ctx.fillText(scorePadded, scoreX, y);
+     
+    }
   }
 }

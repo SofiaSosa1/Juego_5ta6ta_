@@ -20,13 +20,14 @@ const MIN_JUMP_HEIGHT = 150;
 const PLATAFORMA_WIDTH = 2400;
 const PLATAFORMA_HEIGHT = 24;
 const PLATAFORMA_AND_ENEMI_SPEED =0.8;
-
+const META_ENTRY_SPEED = 2;
 const ENEMI_CONFIG = [
     { width: 48 / 1.5, height: 100 / 1.2, image: "./assets/img/serpiente.png" },
     { width: 98 / 1.5, height: 100 / 1.2, image: "./assets/img/abeja.png" },
 ];
 
 //Objetos del juego
+
 let bobby = null;
 let plataforma = null;
 let enemiController = null;
@@ -45,7 +46,8 @@ function createSprites() {
     const maxJumpHeightInGame = MAX_JUMP_HEIGHT * scaleRatio;
     const plataformaWidthInGame = PLATAFORMA_WIDTH * scaleRatio;
     const plataformaHeightInGame = PLATAFORMA_HEIGHT * scaleRatio;
-
+    
+    
     bobby = new Bobby(
         ctx,
         bobbyWidthInGame,
@@ -91,6 +93,12 @@ function setScreen() {
 }
 
 setScreen();
+//cambia la orientacion del canva
+window.addEventListener("resize", () => setTimeout(setScreen, 500));
+
+if (screen.orientation) {
+    screen.orientation.addEventListener("change", setScreen);
+}
 
 //escala 
 function getScaleRatio() {
@@ -211,3 +219,4 @@ requestAnimationFrame(gameLoop);
 
 window.addEventListener("keyup", reset, { once: true });
 window.addEventListener("touchstart", reset, { once: true });
+
